@@ -25,8 +25,8 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
         server: ftp.nigerialocate.com
-        username: "gabAgent@gab-agent.com"
-        password: "EF12@technology"
+        username: gabAgent@gab-agent.com
+        password: EF12@technology
         exclude: |
           **/.git*
           **/.git*/**
