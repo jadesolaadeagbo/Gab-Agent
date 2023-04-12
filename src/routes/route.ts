@@ -14,8 +14,7 @@ let dashboard = {
     name: 'Dashboard',
     component: Dashboard,
     beforeEnter: (to, from, next) => {        
-        // console.log(loggedIn)
-        // next()
+        
         if (loggedIn) {            
             Auth.authUser().then(result => {
                 if (result) {
@@ -38,7 +37,21 @@ let login = {
 let drivers = {
     path: path.DRIVERS,
     name: 'Drivers',
-    component: Drivers
+    component: Drivers,
+    beforeEnter: (to, from, next) => {        
+        
+        if (loggedIn) {            
+            Auth.authUser().then(result => {
+                if (result) {
+                    next()
+                } else {
+                    return next(path.LOGIN)
+                }
+            }).catch(() => {
+                return next(path.LOGIN)
+            })        
+        }
+    },
 }
 const router = createRouter({
     history: createWebHistory(),
