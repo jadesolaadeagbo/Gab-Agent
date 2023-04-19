@@ -42,7 +42,7 @@
                     <div class="flex justify-center md:flex-col md:flex-start gap-2 mb-6">
                         <button 
                             class="box-border flex flex-row justify-center w-52 bg-black text-white items-center h-12 pt-[17px] pr-[16px] pb-[17px] pl-[25px] gap-2.5 md:w-[476px] border border-dark-grey rounded-[13px]">
-                            Login
+                            Login <Loader v-if="isLoading" />
                         </button>
                     </div>
                 </div>
@@ -51,6 +51,7 @@
         <!-- right -->
         <div class="hidden lg:flex flex-col  p-0 justify-center md:pl-32 md:justify-between mt-5 w-screen h-[800px] ">
             <img src="/public/assets/loginimg.png" style="height:800px; width:fit-content" alt="">
+            
         </div>        
    </section>
 </template>
@@ -60,12 +61,15 @@
     import Auth from '@/helpers/auth/Auth.ts'
     import path from '@/routes/path.ts'  
     import notify from '@/helpers/notifications/notification.ts'
+    import Loader from '@/components/Loader.vue'
     export default {
         components: {
-            Form
+            Form,
+            Loader
         },
         data() {
             return {
+                isLoading: false,
                 form: {
                     phone: "",
                     password: "",
@@ -76,14 +80,16 @@
 
         methods: {            
             login(){
+                this.isLoading = true
                 Auth.login(this.form).then(res => {                                                    
                     localStorage.setItem('token', res.data.auth_token)                                                                                
-
+                    this.isLoading = false
                     if (localStorage.getItem('token') != null) {                        
                         window.location.href = path.DASHBOARD
                     }
-                }).catch(err => {                    
-                    return notify.error(err)
+                }).catch(err => {           
+                    this.isLoading = false         
+                    return notify.error(err)                    
                 })                
 
             }
@@ -95,7 +101,7 @@
         },
 
         watch: {
-
+            
         }
     }
 </script>

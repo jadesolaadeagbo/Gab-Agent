@@ -5,4 +5,5 @@ import router from './routes/route'
 
 createApp(App)
 .use(router)
+
 .mount('#app')
