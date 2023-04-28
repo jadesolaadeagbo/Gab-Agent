@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - staging
+      - main
 name: 🚀 Deploy to staging repo
 jobs:
   web-deploy:
@@ -20,18 +20,21 @@ jobs:
     #   run: |
     #     php artisan migrate
     #     php artisan optimize
-
+    - name: 🔨 Build Project
+      run: |
+        npm install
+        npm install --save axios
+        npm run build   
+        
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.2.0
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
         server: ftp.nigerialocate.com
-        username: gabAgent@gab-agent.com
+        username: agent@agent.gabtaxi.com
         password: EF12@technology
+#         local-dir: ./dist/
         exclude: |
           **/.git*
           **/.git*/**
           **/node_modules/**
           **/vendor/**
-          
-          
-          
