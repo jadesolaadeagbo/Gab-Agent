@@ -22,7 +22,8 @@ jobs:
     #     php artisan optimize
     - name: 🔨 Build Project
       run: |
-        npm install
+        npm install --save axios
+        npm update
         npm run build   
         
     - name: 📂 Sync files
