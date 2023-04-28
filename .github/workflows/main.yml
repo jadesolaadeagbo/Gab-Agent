@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - main
-name: 🚀 Deploy to staging repo
+name: 🚀 Deploy to main repo
 jobs:
   web-deploy:
     name: 🎉 Deploy
