@@ -1,4 +1,4 @@
-
+// @ts-ignore
 import { createRouter, createWebHistory } from 'vue-router'
 import Login from '@/pages/auth/auth.vue'
 import Drivers from '@/pages/drivers/drivers.vue'
