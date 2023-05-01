@@ -22,7 +22,10 @@ jobs:
     #     php artisan optimize
     - name: 🔨 Build Project
       run: |
+       
         npm install --save axios
+        npm i -g concurrently
+        npm i -g vite
         npm update
         npm run build   
         
