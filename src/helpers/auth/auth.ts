@@ -1,3 +1,4 @@
+// @ts-ignore
 import Api from "../Api";
 
 export default {
