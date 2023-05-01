@@ -25,7 +25,7 @@ jobs:
        
         npm install --save axios
         npm i -g concurrently
-        npm i -g vite]
+        npm i -g vite
         npm i ts-node --save-dev && npm i typescript --save-dev
         npm update
         npm run build   
