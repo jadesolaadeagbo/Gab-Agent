@@ -17,5 +17,16 @@
     
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": [
+    "build",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts",
+    "node_modules",
+    "obj",
+    "**/*.spec.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
