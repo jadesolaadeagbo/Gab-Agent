@@ -4,7 +4,7 @@ import Login from '@/pages/auth/auth.vue'
 import Drivers from '@/pages/drivers/drivers.vue'
 import Dashboard from '@/pages/dashboard/dashboard.vue'
 import path from './path'
-import Auth from '@/helpers/auth/Auth.ts'
+import Auth from '@/helpers/auth/Auth.js'
 import Profile from '@/pages/profile/profile.vue'
 import Commission from '../pages/commission/commission.vue'
 
