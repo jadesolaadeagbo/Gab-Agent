@@ -23,8 +23,8 @@ jobs:
     - name: 🔨 Build Project
       run: |
        
+        rm -rf node_modules package-lock.json
         npm install --save axios
-        npm i -g concurrently
         npm i -g vite
         npm i ts-node --save-dev && npm i typescript --save-dev
         npm update
