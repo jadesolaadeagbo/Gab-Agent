@@ -27,7 +27,9 @@ jobs:
         npm install --save axios
         npm i -g vite
         npm i ts-node --save-dev && npm i typescript --save-dev
-        npm update
+        npm install -g marked
+        npm install --save-dev @types/marked
+        npm install marked
         npm run build   
         
     - name: 📂 Sync files
