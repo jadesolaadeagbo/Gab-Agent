@@ -27,6 +27,7 @@ jobs:
         npm install --save axios
         npm i -g vite
         npm i ts-node --save-dev && npm i typescript --save-dev
+        npm i -D eslint-plugin-import eslint-import-resolver-typescript
         npm install -g marked
         npm install --save-dev @types/marked
         npm install marked
