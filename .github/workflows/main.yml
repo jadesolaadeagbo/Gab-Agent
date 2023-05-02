@@ -22,7 +22,8 @@ jobs:
     #     php artisan optimize
     - name: 🔨 Build Project
       run: |
-       
+        rm -f yarn.lock
+        npm cache clean --force
         rm -rf node_modules package-lock.json
         npm install --save axios
         npm i -g vite
