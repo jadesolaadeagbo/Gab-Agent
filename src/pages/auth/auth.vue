@@ -58,7 +58,7 @@
 
 <script>
     import Form from '@/components/forms/Form.vue'
-    import Auth from '@/helpers/auth/Auth.ts'
+    import Auth from '@/helpers/auth/auth.ts'
     import path from '@/routes/path.ts'  
     import notify from '@/helpers/notifications/notification.ts'
     import Loader from '@/components/Loader.vue'

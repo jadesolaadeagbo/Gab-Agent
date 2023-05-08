@@ -52,7 +52,7 @@
 </template>
 <script>
 import path from '@/routes/path.ts'
-import Auth from '@/helpers/auth/Auth.ts'
+import Auth from '@/helpers/auth/auth.ts'
     export default {
         data() {
             return {                

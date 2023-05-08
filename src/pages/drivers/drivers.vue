@@ -30,7 +30,7 @@ import NameCard from '@/components/Contactcard.vue'
 import Card from '@/components/Card.vue'
 import Table from '@/components/table/table.vue'
 import MobileMenu from '@/layout/mobilemenu/menu.vue'
-import Auth from '@/helpers/auth/Auth.ts'
+import Auth from '@/helpers/auth/auth.ts'
 
     export default {
         components: {

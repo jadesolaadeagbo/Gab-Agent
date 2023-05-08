@@ -82,7 +82,7 @@
 import Sidebar from '@/layout/sidebar.vue'
 import NameCard from '@/components/Contactcard.vue'
 import Card from '@/components/Card.vue'
-import Auth from '@/helpers/auth/Auth.ts'
+import Auth from '@/helpers/auth/auth.ts'
 import MobileMenu from '@/layout/mobilemenu/menu.vue'
 import Table from '@/components/table/table.vue'
 
