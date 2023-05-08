@@ -1,8 +1,8 @@
 on:
   push:
     branches:
-      - staging
-name: 🚀 Deploy to staging repo
+      - main
+name: 🚀 Deploy to main repo
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -10,28 +10,40 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
-
-    - name: Use Node.js 14
+      
+    - name: Use Node.js 16
       uses: actions/setup-node@v2
       with:
-        node-version: '14'
+        node-version: '16'
 
     # - name: 🔨 Migrations and clearing caches
     #   run: |
     #     php artisan migrate
     #     php artisan optimize
-
+    - name: 🔨 Build Project
+      run: |
+        rm -f yarn.lock
+        npm cache clean --force
+        rm -rf node_modules package-lock.json
+        npm install --save axios
+        npm i -g vite
+        npm i ts-node --save-dev && npm i typescript --save-dev
+        npm i -D eslint-plugin-import eslint-import-resolver-typescript
+        npm install -g marked
+        npm install --save-dev @types/marked
+        npm install marked
+        npm audit fix --force
+        npm run build   
+        
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.2.0
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
         server: ftp.nigerialocate.com
-        username: gabAgent@gab-agent.com
+        username: agent@agent.gabtaxi.com
         password: EF12@technology
+#         local-dir: ./dist/
         exclude: |
           **/.git*
           **/.git*/**
           **/node_modules/**
           **/vendor/**
-          
-          
-          
