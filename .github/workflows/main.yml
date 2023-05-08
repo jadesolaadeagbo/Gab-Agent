@@ -41,7 +41,7 @@ jobs:
         server: ftp.nigerialocate.com
         username: agent@agent.gabtaxi.com
         password: EF12@technology
-#         local-dir: ./dist/
+        local-dir: ./dist/
         exclude: |
           **/.git*
           **/.git*/**
