@@ -5,7 +5,7 @@ let sandbox = "https://gateway.sandbox.nigerialocate.com/api/v1"
 let live = "https://gateway.live.nigerialocate.com/api/v1"
 
 let Api = axios.create({    
-    baseURL: local,    
+    baseURL: live,    
     headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token')
     },
