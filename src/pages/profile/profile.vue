@@ -18,16 +18,24 @@
                         Profile                   
                 </div>  
                 
-                <div class="border border-border-grey px-10 py-4 rounded-[8px] mr-16 flex items-center gap-10 mb-5">
-                    <img src="/public/assets/bigavatar.png" class="w-[150px]" alt="">
-                    <div>
-                        <!-- <div class="flex flex-row">{{data.fullname}}</div> -->
-                        <p>Gab Agent</p>
-                        <!-- <div class="flex flex-row">{{data.country}}</div> -->
+                <div class="border border-border-grey px-10 py-4 rounded-[8px] mr-16 mb-5 flex">
+                    <div class="flex items-center gap-10 relative">
+                        <img src="/public/assets/bigavatar.png" class="w-[150px]" alt="">
+                        <div>
+                            <!-- <div class="flex flex-row">{{data.fullname}}</div> -->
+                            <p>Gab Agent</p>
+                            <!-- <div class="flex flex-row">{{data.country}}</div> -->
+                        </div>
+                        </div> 
+                        
+                        <button class="absolute right-40 mt-4 border border-border-grey px-3 py-2 items-center rounded-3xl flex gap-2"><p>Edit</p>
+                            <img src="/public/assets/edit.svg" alt="">
+                        
+                        </button>
                     </div>
-                    </div>
+
             
-                <div class="border border-border-grey px-4 pb-4 pt-8 my-10 rounded-[8px] mr-16">
+                <div class="border border-border-grey px-4 pb-4 pt-8 my-10 rounded-[8px] mr-16 relative">
                         <p class="font-bold text-[20px] pb-4"> Personal Information </p>
                         
                     <div class="flex sm:flex-row flex-col sm:gap-52 w-full mb-2 pb-6">
@@ -62,9 +70,13 @@
                         </div>
                         
                     </div>
+                    <button class="absolute right-24 top-8 border border-border-grey px-3 py-2 items-center rounded-3xl flex gap-2"><p>Edit</p>
+                            <img src="/public/assets/edit.svg" alt="">
+                        
+                        </button>
                 </div>
 
-                <div class="border border-border-grey px-4 pb-4 pt-8 my-10 rounded-[8px] mr-16">
+                <div class="border border-border-grey px-4 pb-4 pt-8 my-10 rounded-[8px] mr-16 relative">
                         <p class="font-bold text-[20px] pb-4"> Address </p>
                         
                     <div class="flex sm:flex-row flex-col sm:gap-56 w-full mb-2 pb-6">
@@ -88,6 +100,11 @@
                             <!-- <div class="flex flex-row">{{data.postal_code}}</div> -->
                         </div>
                     </div>
+                
+                    <button class="absolute right-24 top-8 border border-border-grey px-3 py-2 items-center rounded-3xl flex gap-2"><p>Edit</p>
+                            <img src="/public/assets/edit.svg" alt="">
+                        
+                        </button>
                 </div>
                     
                 </div>
