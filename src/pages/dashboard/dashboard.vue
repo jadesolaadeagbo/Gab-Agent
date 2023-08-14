@@ -77,7 +77,7 @@
                             <div class=" pb-2 flex flex-row">
                                 Activities
                             </div> 
-                            <div class="lg:gap-4 lg:justify-center sm:mt-14 mt-8 font-bold">
+                            <div class="lg:gap-4 lg:justify-center sm:mt-0 mt-8 font-bold">
                                 <Dashboardtable :body="user.drivers"
                                     :key="key1"/>
                             </div>

@@ -16,10 +16,19 @@
             <div class="pl-5">                    
                 <div class="lg:block text-[24px] font-bold py-10">
                         Profile                   
-                </div>   
+                </div>  
+                
+                <div class="border border-border-grey px-10 py-4 rounded-[8px] mr-16 flex items-center gap-10 mb-5">
+                    <img src="/public/assets/bigavatar.png" class="w-[150px]" alt="">
+                    <div>
+                        <!-- <div class="flex flex-row">{{data.fullname}}</div> -->
+                        <p>Gab Agent</p>
+                        <!-- <div class="flex flex-row">{{data.country}}</div> -->
+                    </div>
+                    </div>
             
-                <div class="border border-grey px-4 py-4 rounded-[8px] mr-16">
-                        <p class="font-bold text-[20px]"> Personal Information </p>
+                <div class="border border-border-grey px-4 pb-4 pt-8 my-10 rounded-[8px] mr-16">
+                        <p class="font-bold text-[20px] pb-4"> Personal Information </p>
                         
                     <div class="flex sm:flex-row flex-col sm:gap-52 w-full mb-2 pb-6">
                         <div class="flex flex-col">
@@ -36,7 +45,7 @@
                             </div> -->
                         </div>
                     </div>
-                    <div class="flex flex-col sm:flex-row sm:gap-52 w-full mb-2 pb-6">
+                    <div class="flex flex-col sm:flex-row sm:gap-[185px] w-full mb-2 pb-6">
                         <div class="flex flex-col">
                             <div class="flex sm:flex-row flex-col text-grey">Email Address</div>
                             <!-- <div class="flex flex-row">{{data.email}}</div> -->
@@ -53,7 +62,33 @@
                         </div>
                         
                     </div>
+                </div>
+
+                <div class="border border-border-grey px-4 pb-4 pt-8 my-10 rounded-[8px] mr-16">
+                        <p class="font-bold text-[20px] pb-4"> Address </p>
+                        
+                    <div class="flex sm:flex-row flex-col sm:gap-56 w-full mb-2 pb-6">
+                        <div class="flex flex-col">
+                            <div class="flex sm:flex-row flex-col text-grey">Country</div>
+                            <!-- <div class="flex flex-row">{{data.fullname}}</div> -->
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="flex sm:flex-row flex-col text-grey">City/State</div>
+                            <!-- <div class="flex flex-row">{{data.city}}</div> -->
+
+                        </div>
                     </div>
+                    <div class="flex flex-col sm:flex-row sm:gap-[265px] w-full mb-2 pb-6">
+                        <div class="flex flex-col">
+                            <div class="flex sm:flex-row flex-col text-grey">ID</div>
+                            <!-- <div class="flex flex-row">{{data.id}}</div> -->
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="flex sm:flex-row flex-col text-grey">Postal Code</div>
+                            <!-- <div class="flex flex-row">{{data.postal_code}}</div> -->
+                        </div>
+                    </div>
+                </div>
                     
                 </div>
 
