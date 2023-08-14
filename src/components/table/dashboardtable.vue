@@ -1,21 +1,21 @@
 <template>
-    <div class=" overflow-x-auto lg:overflow-hidden scrollbar-hide" >
+    <div class="overflow-x-auto scrollbar-hide " >
         <table>
             <thead class="border border-b-grey border-t-0 border-r-0 border-l-0">
-                <tr class="flex justify-between lg:gap-20 gap-8 "> 
+                <tr class="flex justify-between lg:gap-32 gap-16"> 
                     <th class="p-3 text-sm font-semibold text-grey text-left">#</th>   
                     <th class="p-3 text-sm font-semibold text-grey text-left">
                         Driver
                     </th>                
-                    <th class="p-3 text-sm font-semibold text-grey text-left no-wrap-text">
-                        Registration Date
+                    <th class="p-3 text-sm font-semibold text-grey text-left">
+                        Date
                     </th>
                     <th class="p-3 text-sm font-semibold text-grey text-left no-wrap-text">
-                        Verification Status
-                    </th> 
+                        Trip price
+                    </th>           
                     <th class="p-3 text-sm font-semibold text-grey text-left no-wrap-text">
-                        Trips Completed
-                    </th>                                                       
+                        Percentage per trip
+                    </th>                                                        
                 </tr>
             </thead>
             <tbody class="divide-y divide-grey-silver">

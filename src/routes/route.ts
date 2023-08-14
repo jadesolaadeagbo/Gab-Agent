@@ -7,14 +7,14 @@ import path from './path'
 import Auth from '../helpers/auth/auth'
 import Profile from '@/pages/profile/profile.vue'
 import Commission from '../pages/commission/commission.vue'
+import Main from '../layout/main.vue'
 
 const loggedIn = localStorage.getItem('token')
 
-
-let dashboard = {
-    path: path.DASHBOARD,
-    name: 'Dashboard',
-    component: Dashboard,
+let main = {
+    path: path.MAIN,
+    name: 'Main',
+    component: Main,
     beforeEnter: (to:any, from:any, next:any) => {        
         
         if (loggedIn) {            
@@ -29,76 +29,107 @@ let dashboard = {
             })        
         }
     },
-}
-let login = {
-    path: path.LOGIN,
-    name: 'Login',
-    component: Login
-}
-let drivers = {
-    path: path.DRIVERS,
-    name: 'Drivers',
-    component: Drivers,
-    beforeEnter: (to: any, from: any, next:any) => {        
-        
-        if (loggedIn) {            
-            Auth.authUser().then((result: any) => {
-                if (result) {
-                    next()
-                } else {
-                    return next(path.LOGIN)
+
+    children: [
+        {
+            path:'',
+            redirect: 'dashboard'
+        },
+        {            
+            path: path.DASHBOARD,
+            name: 'Dashboard',
+            component: Dashboard,
+            beforeEnter: (to:any, from:any, next:any) => {        
+                
+                if (loggedIn) {            
+                    Auth.authUser().then((result: any) => {
+                        if (result) {
+                            next()
+                        } else {
+                            return next(path.LOGIN)
+                        }
+                    }).catch(() => {
+                        return next(path.LOGIN)
+                    })        
                 }
-            }).catch(() => {
-                return next(path.LOGIN)
-            })        
-        }
-    },
-}
-let profile = {
-    path: path.PROFILE,
-    name: 'profile',
-    component: Profile,
-    beforeEnter: (to: any, from: any, next: any) => {        
+            },
         
-        if (loggedIn) {            
-            Auth.authUser().then((result: any) => {
-                if (result) {
-                    next()
-                } else {
-                    return next(path.LOGIN)
+        },
+        {
+                path: path.DRIVERS,
+                name: 'Drivers',
+                component: Drivers,
+                beforeEnter: (to: any, from: any, next:any) => {        
+                    
+                    if (loggedIn) {            
+                        Auth.authUser().then((result: any) => {
+                            if (result) {
+                                next()
+                            } else {
+                                return next(path.LOGIN)
+                            }
+                        }).catch(() => {
+                            return next(path.LOGIN)
+                        })        
+                    }
+            },
+        },
+        {
+          
+                path: path.PROFILE,
+                name: 'profile',
+                component: Profile,
+                beforeEnter: (to: any, from: any, next: any) => {        
+                    
+                    if (loggedIn) {            
+                        Auth.authUser().then((result: any) => {
+                            if (result) {
+                                next()
+                            } else {
+                                return next(path.LOGIN)
+                            }
+                        }).catch(() => {
+                            return next(path.LOGIN)
+                        })        
+                    }
+                },
+            },
+            {
+               
+                path: path.COMMISSION,
+                name: 'commission',
+                component: Commission,
+                beforeEnter: (to: any, from: any, next: any) => {        
+                    
+                    if (loggedIn) {            
+                        Auth.authUser().then((result: any) => {
+                            if (result) {
+                                next()
+                            } else {
+                                return next(path.LOGIN)
+                            }
+                        }).catch(() => {
+                            return next(path.LOGIN)
+                        })        
+                    }
+                
                 }
-            }).catch(() => {
-                return next(path.LOGIN)
-            })        
-        }
-    },
+            
+            }
+    ]
 }
 
-let commission = {
-    path: path.COMMISSION,
-    name: 'commission',
-    component: Commission,
-    beforeEnter: (to: any, from: any, next: any) => {        
-        
-        if (loggedIn) {            
-            Auth.authUser().then((result: any) => {
-                if (result) {
-                    next()
-                } else {
-                    return next(path.LOGIN)
-                }
-            }).catch(() => {
-                return next(path.LOGIN)
-            })        
-        }
-    },
-}
+    let login = {
+        path: path.LOGIN,
+        name: 'Login',
+        component: Login
+    }
 
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [      
-        dashboard, login, drivers, profile, commission
+         login, main
     ]
   })
   

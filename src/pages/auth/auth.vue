@@ -1,47 +1,63 @@
 <template>
-   <section class="flex flex-row md:gap-6">
+   <div class="lg:flex justify-between px-5 pt-10 lg:pt-0 sm:pt-20 items-center">
         <!-- left -->
-        <div class="flex md:flex-rows md:flex-col justify-center md:pl-32 md:justify-between w-[650px] h-screen ">
+        <div class="flex flex-col lg:w-1/2  sm:pl-20 ">
 
-        
-        <div class="absolute w-[122.47px] h-[84px] pt-10">
+        <div class=" w-[100px]">
             <img src="../../../public/assets/gablogo.png" alt="">
         </div>   
-        
-            <!-- LOGIN SECTION -->
-        <div class="absolute w-52 h-16 top-44 md:top-56">
-                <p class="not-italic font-extrabold flex items-center text-base md:text-xl">
+        <div class="">
+                <p class=" font-bold flex items-center text-base sm:text-xl">
                     Welcome!
                 </p>
                 <!-- small text -->
-                <p class="not-italic font-normal text-sm md:text-md flex items-center text-grey">
+                <p class="text-sm sm:text-md flex items-center text-grey">
                     Sign in to your account
                 </p>            
             </div>
             <form @submit.prevent="login">
-                <div class="gap-3 relative top-[300px]  md:top-[447px]">
-                    <div class="flex justify-center md:flex-col md:flex-start gap-2 mb-6">
+                <div class="flex flex-col space-y-3">
+                    <div class="flex sm:justify-center flex-col space-y-3">
+                        <label class="pt-10">Phone Number</label>
                         <input 
                             required
                             type="text" 
-                            class="box-border flex flex-row items-center h-12 pt-[17px] pr-[16px] pb-[17px] pl-[25px] gap-2.5 md:w-[476px] border border-dark-grey rounded-[13px] focus:border-blue"
+                            class=" flex flex-row items-center h-12 py-[17px] pl-[15px] sm:w-3/4 lg:w-full  border border-dark-grey rounded-[13px]"
                             placeholder="Enter Phone Number"
-                            v-model="form.phone"            
+                            v-model="form.phone"  
+                            autocomplete="off"          
                         >  
                     </div>
             
-                    <div class="flex justify-center md:flex-col md:flex-start gap-2 mb-6">
+                    <div class="relative flex flex-col space-y-3">
+                        <label>Enter Password</label>
                         <input 
                             required
-                            type="password" 
-                            class="box-border flex flex-row items-center h-12 pt-[17px] pr-[16px] pb-[17px] pl-[25px] gap-2.5 md:w-[476px] border border-dark-grey rounded-[13px] focus:border-blue-500"
+                            :type="showPassword ? 'text': 'password'"
+                            class="border flex flex-row items-center h-12 py-[17px]  pl-[15px] lg:w-full sm:w-3/4 border-dark-grey rounded-[13px] relative"
                             placeholder="Enter Password"
-                            v-model="form.password"            
-                        >                         
+                            v-model="form.password" 
+                            autocomplete="off"           
+                        >  
+                        <button type="button" @click="togglePasswordVisibility" class="absolute right-[15px] top-[35px] lg:right-[20px] sm:right-[180px]">
+                            <i :class="{'fa-solid fa-eye': showPassword, 'fa-solid fa-eye-slash': !showPassword}" class="passwordIcon"></i>
+                        </button>
                     </div>
-                    <div class="flex justify-center md:flex-col md:flex-start gap-2 mb-6">
+                    <div class="flex justify-between  mb-8 text-grey sm:w-3/4 lg:w-full">
+                        <span class="flex gap-2 items-center">
+                            <i class="fa-solid fa-square-check absolute" style="color: #000000;" v-if="isChecked"></i>
+                            <input type="checkbox">                                
+
+
+                            <p>Remember Me</p>                            
+                        </span>
+
+                        <span>Forgot Password?</span>
+
+                    </div>
+                    <div class="mb-6">
                         <button 
-                            class="box-border flex flex-row justify-center w-52 bg-black text-white items-center h-12 pt-[17px] pr-[16px] pb-[17px] pl-[25px] gap-2.5 md:w-[476px] border border-dark-grey rounded-[13px]">
+                            class="flex justify-center bg-black text-white items-center h-12 mt-4 pt-[17px] pr-[16px] pb-[17px] pl-[25px] lg:w-full sm:w-3/4 w-full border border-dark-grey rounded-[13px] ">
                             Login <Loader v-if="isLoading" />
                         </button>
                     </div>
@@ -49,11 +65,11 @@
             </form>
         </div>
         <!-- right -->
-        <div class="hidden lg:flex flex-col  p-0 justify-center md:pl-32 md:justify-between mt-5 w-screen h-[800px] ">
-            <img src="/public/assets/loginimg.png" style="height:800px; width:fit-content" alt="">
+        <div class="hidden lg:flex items-center pt-4 sm:pl-32">
+            <img src="/public/assets/loginimg.png" className="h-[95vh] w-[700px]" alt="">
             
         </div>        
-   </section>
+    </div>
 </template>
 
 <script>
@@ -70,6 +86,8 @@
         data() {
             return {
                 isLoading: false,
+                isChecked:false,
+                showPassword:false,
                 form: {
                     phone: "",
                     password: "",
@@ -77,7 +95,6 @@
                 }
             }
         },
-
         methods: {            
             login(){
                 this.isLoading = true
@@ -85,23 +102,28 @@
                     localStorage.setItem('token', res.data.auth_token)                                                                                
                     this.isLoading = false
                     if (localStorage.getItem('token') != null) {                        
-                        window.location.href = path.DASHBOARD
+                        window.location.href = path.MAIN 
                     }
                 }).catch(err => {           
                     this.isLoading = false         
                     return notify.error(err)                    
                 })                
 
+            },
+            togglePasswordVisibility() {
+                this.showPassword = !this.showPassword;
+                console.log(this.showPassword);
             }
-            
-        },
 
-        created() {
             
-        },
 
-        watch: {
-            
-        }
     }
+}
 </script>
+
+<style>
+.passwordIcon{
+    color: grey;
+}
+
+</style>

@@ -1,26 +1,30 @@
 <template>
-    <div class="flex flex-row absolute">
-        <div class="hidden md:flex flex-col w-[372px] h-screen">
-            <Sidebar />
-        </div>       
-        <div class="md:hidden fixed  h-10 mt-2  left-[20px]">
-            <MobileMenu />
-        </div>  
-        <div class=" flex flex-col h-screen">
-            <div class="flex flex-row justify-center mt-10 md:ml-10">
-                <div class="md:w-[168px] mt-24 md:top-12 md:h-[39px] md:left-[428px] font-bold">
-                    Registered Drivers
-                </div>    
+    <div class="w-full pl-10 lg:pl-0">
+
+        <div class="w-full">
+            <!-- Search Bar -->
+            <div class="py-10 border-b border-input-grey sm:flex justify-end items-center w-full gap-8 pr-16 hidden">
+                <div class="w-full flex justify-end relative">
+                    <input type="text" placeholder="Search" class="rounded-[28px] pl-12 w-1/2 text-lg outline-none h-[50px] bg-input-grey relative ">
+                    <img src="/public/assets/search.svg" class="lg:right-[320px] right-[230px] top-[12px] absolute" alt="">
+                </div>
+                <span class="bg-input-grey p-3 rounded-full">
+                    <img src="/public/assets/bell.svg" class="w-[40px]" alt="">
+                </span>
+                <img src="/public/assets/avatar.png" class="w-[50px]" alt="">
+
             </div>
-            <div class="relative ml-2 gap-4 justify-center mt-14 md:mt-14 items-center font-bold">
+            <div class="sm:flex sm:justify-between items-center mt-3 font-bold">                    
+                <div class=" text-[24px]">
+                    Registered Drivers                    
+                </div>   
+            </div>
+            </div>
+           <div class="lg:gap-4 lg:justify-center sm:mt-14 mt-8 font-bold">
                 <Table 
                     :body="drivers"
                 />      
             </div>
-            
-        </div>
-        
-        
     </div>
 </template>
 
