@@ -1,9 +1,9 @@
 
 enum path {
     LOGIN = "/",
-    MAIN = "/main",
+    MAIN = "main",
     DRIVERS = "/drivers",
-    DASHBOARD = "/dashboard",
+    DASHBOARD = "dashboard",
     PROFILE ="/profile",
     COMMISSION = "/commission",
 }

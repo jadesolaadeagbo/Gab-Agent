@@ -6,7 +6,7 @@
             <div class="py-10 border-b border-input-grey sm:flex justify-end items-center w-full gap-8 pr-16 hidden">
                 <div class="w-full flex justify-end relative">
                     <input type="text" placeholder="Search" class="rounded-[28px] pl-12 w-1/2 text-lg outline-none h-[50px] bg-input-grey relative ">
-                    <img src="/public/assets/search.svg" class="lg:right-[320px] right-[230px] top-[12px] absolute" alt="">
+                    <img src="/public/assets/search.svg" class="lg:right-[330px] right-[230px] top-[12px] absolute" alt="">
                 </div>
                 <span class="bg-input-grey p-3 rounded-full">
                     <img src="/public/assets/bell.svg" class="w-[40px]" alt="">
