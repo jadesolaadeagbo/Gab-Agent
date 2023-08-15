@@ -5,7 +5,7 @@
             <div class="py-10 border-b border-input-grey lg:flex justify-end items-center w-full gap-8 pr-16 hidden">
                 <div class="w-full flex justify-end relative">
                     <input type="text" placeholder="Search" class="rounded-[28px] pl-12 w-1/2 text-lg outline-none h-[50px] bg-input-grey relative ">
-                    <img src="/public/assets/search.svg" class="lg:right-[330px] right-[230px] top-[12px] absolute" alt="">
+                    <img src="/public/assets/search.svg" class="lg:right-[360px] right-[230px] top-[12px] absolute" alt="">
                 </div>
                 <span class="bg-input-grey p-3 rounded-full">
                     <img src="/public/assets/bell.svg" class="w-[40px]" alt="">
@@ -13,7 +13,7 @@
                 <img src="/public/assets/avatar.png" class="w-[50px]" alt="">
 
             </div>
-                <div class="flex justify-between items-center mt-5 font-bold sm:w-[96%] w-[92%]">                    
+                <div class="flex justify-between items-center mt-5 font-bold sm:w-[96%] w-[92%] pr-5">                    
                     <div>
                         <p class=" text-lg sm:text-2xl">Dashboard</p>                    
                     </div>

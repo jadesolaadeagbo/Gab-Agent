@@ -5,7 +5,7 @@
             <div class="py-10 border-b border-input-grey sm:flex justify-end items-center w-full gap-8 pr-16 hidden">
                 <div class="w-full flex justify-end relative">
                     <input type="text" placeholder="Search" class="rounded-[28px] pl-12 w-1/2 text-lg outline-none h-[50px] bg-input-grey relative ">
-                    <img src="/public/assets/search.svg" class="lg:right-[275px] right-[230px] top-[12px] absolute" alt="">
+                    <img src="/public/assets/search.svg" class="lg:right-[340px] right-[230px] top-[12px] absolute" alt="">
                 </div>
                 <span class="bg-input-grey p-3 rounded-full">
                     <img src="/public/assets/bell.svg" class="w-[40px]" alt="">
@@ -23,12 +23,12 @@
                         <img src="/public/assets/bigavatar.png" class="w-[150px]" alt="">
                         <div>
                             <!-- <div class="flex flex-row">{{data.fullname}}</div> -->
-                            <p>Gab Agent</p>
+                            <p class="pt-4 lg:pt-0">Gab Agent</p>
                             <!-- <div class="flex flex-row">{{data.country}}</div> -->
                         </div>
                         </div> 
                         
-                        <button class="absolute right-40 mt-4 border border-border-grey px-3 py-2 items-center rounded-3xl flex gap-2"><p>Edit</p>
+                        <button class="absolute lg:right-40 mt-4 border border-border-grey px-3 py-2 items-center rounded-3xl flex gap-2 right-24"><p>Edit</p>
                             <img src="/public/assets/edit.svg" alt="">
                         
                         </button>
@@ -70,7 +70,7 @@
                         </div>
                         
                     </div>
-                    <button class="absolute right-24 top-8 border border-border-grey px-3 py-2 items-center rounded-3xl flex gap-2"><p>Edit</p>
+                    <button class="absolute lg:right-24 top-8 border border-border-grey px-3 py-2 items-center rounded-3xl flex gap-2 right-8"><p>Edit</p>
                             <img src="/public/assets/edit.svg" alt="">
                         
                         </button>
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                 
-                    <button class="absolute right-24 top-8 border border-border-grey px-3 py-2 items-center rounded-3xl flex gap-2"><p>Edit</p>
+                    <button class="absolute lg:right-24 right-8 top-8 border border-border-grey px-3 py-2 items-center rounded-3xl flex gap-2"><p>Edit</p>
                             <img src="/public/assets/edit.svg" alt="">
                         
                         </button>

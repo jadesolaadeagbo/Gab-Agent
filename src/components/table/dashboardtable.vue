@@ -1,5 +1,5 @@
 <template>
-    <div class="overflow-x-auto scrollbar-hide " >
+    <div class="overflow-x-auto lg:overflow-hidden scrollbar-hide " >
         <table>
             <thead class="border border-b-grey border-t-0 border-r-0 border-l-0">
                 <tr class="flex justify-between lg:gap-32 gap-16"> 
