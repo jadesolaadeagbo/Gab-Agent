@@ -1,12 +1,12 @@
 <template>
     <div>
         <div :class="[width,height,color,rounded]">
-            <div class="flex flex-col space-y-3 px-5 pt-2">
+            <div class="flex flex-col space-y-2 px-5 pt-2">
                 <p class="w-[166px] h-[39px] text-sm font-bold flex items-center text-grey ">
                     {{ label }}
                 </p>                
-                <span class=" bg-black w-[50px] rounded-2xl flex justify-center">
-                    <img :src="'/assets/'+img" class=" w-[40px] h-[50px] rounded-[40px]" alt="">                
+                <span class="">
+                    <img :src="'/assets/'+img" class=" w-[50px]" alt="">                
                 </span>
 
                 <p 

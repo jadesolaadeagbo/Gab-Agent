@@ -3,10 +3,10 @@
 
         <div class="w-full">
             <!-- Search Bar -->
-            <div class="py-10 border-b border-input-grey sm:flex justify-end items-center w-full gap-8 pr-16 hidden">
+            <div class="py-10 border-b border-input-grey lg:flex justify-end items-center w-full gap-8 pr-16 hidden">
                 <div class="w-full flex justify-end relative">
-                    <input type="text" placeholder="Search" class="rounded-[28px] pl-12 w-1/2 text-lg outline-none h-[50px] bg-input-grey relative ">
-                    <img src="/public/assets/search.svg" class="lg:right-[360px] right-[230px] top-[12px] absolute" alt="">
+                    <input type="text" placeholder="Search" class="rounded-[28px] pl-12 w-1/2 text-lg outline-none h-[50px]  relative search-input bg-input-grey">
+                    <!-- <img src="/public/assets/search.svg" class="lg:right-[360px] right-[230px] top-[12px] absolute" alt=""> -->
                 </div>
                 <span class="bg-input-grey p-3 rounded-full">
                     <img src="/public/assets/bell.svg" class="w-[40px]" alt="">
@@ -69,3 +69,10 @@ import Auth from '@/helpers/auth/auth.ts'
 
     }
 </script>
+
+<style>
+.search-input{
+    background: #F6F6F6 url("/public/assets/search.svg") no-repeat 13px center;
+
+}
+</style>
