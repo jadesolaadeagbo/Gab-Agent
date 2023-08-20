@@ -24,6 +24,7 @@
   </template>
 
 <script>
+
 import sidebar from './sidebar.vue';
 
 export default {

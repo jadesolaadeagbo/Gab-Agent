@@ -4,7 +4,7 @@
             <!-- Search Bar -->
             <div class="py-10 border-b border-input-grey lg:flex justify-end items-center w-full gap-8 pr-16 hidden">
                 <div class="w-full flex justify-end">
-                    <input type="text" placeholder="Search" class="rounded-[28px] pl-12 w-1/2 text-lg outline-none h-[50px] bg-input-grey relative search-input">
+                    <input type="text" :placeholder="$t('search')" class="rounded-[28px] pl-12 w-1/2 text-lg outline-none h-[50px] bg-input-grey relative search-input">
                 </div>
                 <span class="bg-input-grey p-3 rounded-full">
                     <img src="/public/assets/bell.svg" class="w-[40px]" alt="">
@@ -14,11 +14,11 @@
             </div>
                 <div class="flex justify-between items-center mt-5 font-bold sm:w-[96%] w-[92%] lg:pl-0">                    
                     <div>
-                        <p class=" text-lg sm:text-2xl">Dashboard</p>                    
+                        <p class=" text-lg sm:text-2xl">{{$t('dashboard')}}</p>                    
                     </div>
                     <div class="hover:bg-grey bg-black text-sm rounded-xl border-grey-silver">
                         <button @click="goToRoute()" class="text-white px-8 py-2 text-[10px] sm:text-lg">
-                            Withdraw Commission
+                            {{ $t('withdraw_commission') }}
                         </button>
                     </div>
                 </div>                             
@@ -31,7 +31,7 @@
                                 :height='"h-[203px]"'
                                 :img="'wallet.svg'"
                                 :amount="user.wallet"
-                                :label="'Commission'"
+                                :label="$t('commission')"
                                 :key="key1"
                                 :progress = 50
                                 :bgcolor="'black'"
@@ -44,7 +44,7 @@
                                 :height='"h-[203px]"'
                                 :img="'percentage.svg'"
                                 :amount="user.percentage"
-                                :label="'Percentage'"
+                                :label="$t('percentage')"
                                 :key="key1"
                                 :progress = 6
                                 :bgcolor="'gray'"
@@ -57,7 +57,7 @@
                                 :height='"h-[203px]"'
                                 :img="'suitcase.svg'"
                                 :amount="user.amount"
-                                :label="'Salary'"
+                                :label="$t('salary')"
                                 :key="key1"
                             />
                         </div>
@@ -111,7 +111,7 @@
                     <div class="relative mt-8 justify-stretch flex flex-row">                        
                         <div class="flex flex-col">
                             <div class=" pb-2 flex flex-row">
-                                Activities
+                                {{ $t('activities') }}
                             </div> 
                             <div class="lg:gap-4 lg:justify-center sm:mt-0 mt-8 font-bold">
                                 <Dashboardtable :body="user.drivers"
