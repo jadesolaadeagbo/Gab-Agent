@@ -1,13 +1,13 @@
 <template>
     <div class="bg-black w-[372px] h-screen flex border">        
         <img 
-            class="lg:block hidden absolute w-[186px] left-[53px] top-[51px]"
+            class="lg:block hidden absolute w-[100px] left-[53px] top-[40px]"
             src="/public/assets/gablogowhite.png"  
             alt=""
         >
-        <div class="flex flex-col ml-[57px] lg:mt-[200px] mt-[50px] justify-start items-center gap-6 border lg:w-96 w-60">
+        <div class="flex flex-col ml-[57px] lg:mt-[150px] mt-[50px] justify-start items-center gap-6 border lg:w-96 w-60">
 
-            <div class="flex flex-row pb-12">
+            <div class="flex flex-row pb-12 ">
                 <router-link :to="dashboard" :class="active_route === dashboard 
                     ? 'border-l-4 border-white border border-y-0 border-r-0 flex cursor-pointer flex-row items-center gap-1 p-6 absolute  left-[10px] hover:p-6 text-white ml-4' 
                     : 'flex cursor-pointer flex-row items-center gap-1 py-8 px-6 absolute left-[10px] text-grey '" @click="updateActiveRoute(dashboard)"
@@ -51,16 +51,16 @@
             
 
         <!-- Language Translation dropdown -->
-       <div class=" gap-2 p-6 lg:pt-[286px] pt-[360px] absolute left-[10px]">
+       <div class="p-6 lg:bottom-0 lg:pt-20 bottom-32 absolute left-[10px]">
             <div>
-                <button class="flex items-center " @click="toggleDropdown" exact-active-class="text-blue-600" :class="textColor">
+                <button class="flex items-center text-white gap-2 border border-grey p-2 rounded-sm" @click="toggleDropdown" >
                 <img  :src="getLanguageImage(selectedLanguage)" class="rounded-3xl w-[20px] text-input-grey" alt="">
                 {{ getLanguageCode(selectedLanguage) }} 
                 <img src="/public/assets/caret-down.svg" v-if="dropdownOpen"  alt="">
                 <img src="/public/assets/caret.svg" v-else alt=""></button>
 
                 <div v-if="dropdownOpen" class="">
-                    <ul class="  absolute w-[200px] rounded-lg left-[] lg:pt-0 pt-3 pl-2 boxShadow z-[50] text-white">
+                    <ul class="  absolute w-[200px] lg:bottom-16 border bg-black border-input-grey bottom-[70px] lg:pt-0 pl-2 boxShadow z-[50] text-white">
                     
                     <li class="mt-2 gap-2 cursor-pointer rounded-lg flex items-center" @click="selectLanguage('en')"><img src="/public/assets/english.svg" class="w-[20px] h-[20px] rounded-full" alt="">English</li>
                     <li class="mt-2 gap-2 cursor-pointer rounded-lg flex items-center" @click="selectLanguage('portuguese')"><img src="/public/assets/portuguese.svg" class="w-[20px] h-[20px] rounded-full" alt=""> Portuguese</li>

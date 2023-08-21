@@ -54,7 +54,7 @@
                             <Card 
                                 :color="'bg-olive-green'"
                                 :width='"lg:w-[300px] w-full"'
-                                :height='"h-[203px]"'
+                                :height='"h-[203px]"' 
                                 :img="'suitcase.svg'"
                                 :amount="user.amount"
                                 :label="$t('salary')"

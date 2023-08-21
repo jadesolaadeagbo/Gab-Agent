@@ -34,12 +34,25 @@ const messages= {
     phone:'Telefone',
     bio:'Biografia',
     edit:'Editar',
-    address:'Endereço',
+    address:'Endereço', 
     country:'Country',
     city:'Cidade-Estado',
     id:'Eu ia',
     postal_code:'Código postal',
     logout:'Sair',
+
+    // DashboardTable
+    driver: 'Motorista',
+    date:'Data',
+    trip_price:'Preço da Viagem',
+    percentage_per_price:'Porcentagem por preço',
+
+    // Table
+    registration_date:'Data de registro',
+    verification_status:'Status de verificação',
+    trips_completed:'Viagens concluídas'
+
+
 }
 
 export default messages

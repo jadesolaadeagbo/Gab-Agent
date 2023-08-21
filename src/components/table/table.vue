@@ -5,16 +5,16 @@
                 <tr class="flex justify-between lg:gap-20 gap-8 "> 
                     <th class="p-3 text-sm font-semibold text-grey text-left">#</th>   
                     <th class="p-3 text-sm font-semibold text-grey text-left">
-                        Driver
+                        {{ $t('driver') }}
                     </th>                
                     <th class="p-3 text-sm font-semibold text-grey text-left no-wrap-text">
-                        Registration Date
+                        {{ $t('registration_date') }}
                     </th>
                     <th class="p-3 text-sm font-semibold text-grey text-left no-wrap-text">
-                        Verification Status
+                        {{ $t('verification_status') }}
                     </th> 
                     <th class="p-3 text-sm font-semibold text-grey text-left no-wrap-text">
-                        Trips Completed
+                        {{ $t('trips_completed') }}
                     </th>                                                       
                 </tr>
             </thead>

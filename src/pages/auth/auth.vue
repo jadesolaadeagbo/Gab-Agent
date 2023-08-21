@@ -78,7 +78,7 @@
                     </div>
                     <div class="mb-6">
                         <button 
-                            class="flex justify-center bg-black text-white items-center h-12 mt-4 pt-[17px] pr-[16px] pb-[17px] pl-[25px] lg:w-full sm:w-3/4 w-full border border-dark-grey rounded-[13px] ">
+                            class="flex justify-center bg-black text-white items-center h-12 mt-4 pt-[17px] pr-[16px] pb-[17px] pl-[25px] lg:w-full sm:w-3/4 w-full border border-dark-grey rounded-[13px] gap-2">
                         {{ $t('login') }} <Loader v-if="isLoading" />
                         </button>
                     </div>

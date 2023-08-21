@@ -5,16 +5,16 @@
                 <tr class="flex justify-between lg:gap-32 gap-16"> 
                     <th class="p-3 text-sm font-semibold text-grey text-left">#</th>   
                     <th class="p-3 text-sm font-semibold text-grey text-left">
-                        Driver
+                        {{ $t('driver') }}
                     </th>                
                     <th class="p-3 text-sm font-semibold text-grey text-left">
-                        Date
-                    </th>
+                        {{ $t('date') }}
+                    </th>  
                     <th class="p-3 text-sm font-semibold text-grey text-left no-wrap-text">
-                        Trip price
+                        {{ $t('trip_price') }}
                     </th>           
                     <th class="p-3 text-sm font-semibold text-grey text-left no-wrap-text">
-                        Percentage per trip
+                        {{ $t('percentage_per_price') }}
                     </th>                                                        
                 </tr>
             </thead>

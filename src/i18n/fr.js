@@ -35,12 +35,24 @@ const messages= {
     phone:'Téléphone',
     bio:'Bio',
     edit:'Modifier',
-    address:'Adresse',
+    address:'Adresse', 
     country:'Pays',
     city:'Ville/État',
     id:'IDENTIFIANT',
     postal_code:'Code Postal',
-    logout:'Se déconnecter'
+    logout:'Se déconnecter',
+
+    // DashboardTable
+    driver: 'Conducteur',
+    date:'Date',
+    trip_price:'Prix ​​du voyage',
+    percentage_per_price:'Pourcentage par prix',
+
+    // Table
+    registration_date:"Date d'inscription",
+    verification_status:'État de la vérification',
+    trips_completed:'Voyages terminés'
+
 
     
 

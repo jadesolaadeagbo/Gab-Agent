@@ -23,7 +23,7 @@ const messages= {
     percentage:'Percentage',
     salary:'Salary',
 
-    // Registered Drivers
+    // Registered Drivers 
     registered_drivers:'Registered Drivers',
 
     // Profile
@@ -41,7 +41,18 @@ const messages= {
     city:'City/State',
     id:'ID',
     postal_code:'Postal Code',
-    logout:'Log Out'
+    logout:'Log Out',
+
+    // DashboardTable
+    driver: 'Driver',
+    date:'Date',
+    trip_price:'Trip Price',
+    percentage_per_price:'Percentage per price',
+
+    // Table
+    registration_date:'Registration Date',
+    verification_status:'Verification status',
+    trips_completed:'Trips completed'
 
 
 
