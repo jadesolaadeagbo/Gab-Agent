@@ -1,5 +1,5 @@
 <template>
-    <div class="overflow-x-auto lg:overflow-hidden scrollbar-hide " >
+    <div class="overflow-x-auto lg:overflow-hidden " >
         <table>
             <thead class="border border-b-grey border-t-0 border-r-0 border-l-0">
                 <tr class="flex justify-between lg:gap-32 gap-16"> 
@@ -9,7 +9,7 @@
                     </th>                
                     <th class="p-3 text-sm font-semibold text-grey text-left">
                         {{ $t('date') }}
-                    </th>  
+                    </th>
                     <th class="p-3 text-sm font-semibold text-grey text-left no-wrap-text">
                         {{ $t('trip_price') }}
                     </th>           
