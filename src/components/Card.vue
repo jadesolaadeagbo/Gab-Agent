@@ -1,16 +1,21 @@
 <template>
     <div>
         <div :class="[width,height,color,rounded]">
-            <div class="absolute">
-                <p class="w-[166px] h-[39px] top-[10px] left-[32px] absolute not-italic text-sm font-bold flex items-center text-grey">
+            <div class="flex flex-col space-y-2 px-5 pt-2">
+                <p class="w-[166px] h-[39px] text-sm font-bold flex items-center text-grey ">
                     {{ label }}
                 </p>                
-                <!-- <img src="/public/assets/info.png" alt="" class="w-[16px] h-[16px] top-[42px] left-[332px] absolute not-italic text-sm font-bold flex items-center text-grey"> -->
-                <img :src="'/assets/'+img" class="relative w-[80px] h-[68px] left-[32px] top-[70px] rounded-[18px]" alt="">
+                <span class="">
+                    <img :src="'/assets/'+img" class=" w-[50px]" alt="">                
+                </span>
+
                 <p 
-                    class="relative not-italic font-bold text-md flex flex-row items-center text-center top-[80px] left-[32px]">
+                    class="relative font-bold text-md flex flex-row items-center text-center">
                     {{amount}}
                 </p>
+                <div class="progress-bar">
+                    <div class="progress" :style="{ width: `${progress}%`, backgroundColor: `${bgcolor}`}"></div>
+                </div>
             </div>
 
         </div>        
@@ -24,7 +29,9 @@
             height: String,
             img: String,
             amount: String,
-            label: String
+            label: String,
+            progress: Number,
+            bgcolor: String
         },
         data() {
             return {
@@ -34,8 +41,27 @@
                 height: this.$props.height,
                 img: this.$props.img,
                 amount: this.$props.amount,
-                label: this.$props.label
+                label: this.$props.label,
+                progress:this.$props.progress,
+                bgcolor:this.$props.bgcolor 
             }
         },
     }
 </script>
+
+<style>
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  /* background-color: #42b983; */
+  transition: width 0.3s ease-in-out;
+  border-radius: 4px;
+}
+</style>

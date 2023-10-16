@@ -31,7 +31,9 @@ module.exports = {
       'cream':"#FFF7EC",
       'grey-silver':"#c0c0c0",
       'olive-green' :"#CEFFD6",
-      'red':"#FF0000"
+      'red':"#FF0000",
+      'input-grey':"#F6F6F6",
+      'border-grey':"#F0F0F0"
       
 
     },

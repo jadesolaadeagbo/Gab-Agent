@@ -1,11 +1,5 @@
 <template>
-    <div class="flex flex-row absolute">
-        <div class="hidden md:flex flex-col w-[372px] h-screen">
-            <Sidebar />
-        </div>       
-        <div class="md:hidden fixed  h-10 mt-2  left-[20px]">
-            <MobileMenu />
-        </div>  
+    <div class="flex flex-row">
         <div class=" flex flex-col h-screen">
             <div class="flex flex-row justify-center mt-10 md:ml-10">
                 <div class="md:w-[268px] ml-5 mt-24 md:top-12 md:h-[39px] md:left-[428px] font-bold">

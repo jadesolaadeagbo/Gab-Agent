@@ -1,17 +1,20 @@
 <template>
-    <div class="relative overflow-x-auto  ml-12 scrollbar-hide w-full" >
+    <div class=" overflow-x-auto lg:overflow-hidden scrollbar-hide" >
         <table>
             <thead class="border border-b-grey border-t-0 border-r-0 border-l-0">
-                <tr> 
-                    <th class="p-3 text-sm font-semibold text-grey tracking-wide w-24 text-left">#</th>   
-                    <th class="p-3 text-sm font-semibold text-grey tracking-wide w-64 text-left">
-                        Driver
+                <tr class="flex justify-between lg:gap-20 gap-8 "> 
+                    <th class="p-3 text-sm font-semibold text-grey text-left">#</th>   
+                    <th class="p-3 text-sm font-semibold text-grey text-left">
+                        {{ $t('driver') }}
                     </th>                
-                    <th class="p-3 text-sm font-semibold text-grey tracking-wide w-40 text-left">
-                        Registration Date
+                    <th class="p-3 text-sm font-semibold text-grey text-left no-wrap-text">
+                        {{ $t('registration_date') }}
                     </th>
-                    <th class="p-3 text-sm font-semibold text-grey tracking-wide w-52 text-left">
-                        Verification Status
+                    <th class="p-3 text-sm font-semibold text-grey text-left no-wrap-text">
+                        {{ $t('verification_status') }}
+                    </th> 
+                    <th class="p-3 text-sm font-semibold text-grey text-left no-wrap-text">
+                        {{ $t('trips_completed') }}
                     </th>                                                       
                 </tr>
             </thead>
@@ -51,3 +54,9 @@
 
     }
 </script>
+
+<style>
+.no-wrap-text{
+    white-space: nowrap;
+}
+</style>
