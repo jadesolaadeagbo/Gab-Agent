@@ -133,7 +133,7 @@
                     }
                 }).catch(err => {           
                     this.isLoading = false         
-                    return notify.error(err)                    
+                    return notify.error(err.response.data.message)                    
                 })                
 
             },

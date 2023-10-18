@@ -13,9 +13,7 @@
                     class="relative font-bold text-md flex flex-row items-center text-center">
                     {{amount}}
                 </p>
-                <div class="progress-bar">
-                    <div class="progress" :style="{ width: `${progress}%`, backgroundColor: `${bgcolor}`}"></div>
-                </div>
+
             </div>
 
         </div>        

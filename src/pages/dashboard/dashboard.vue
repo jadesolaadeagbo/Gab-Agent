@@ -51,7 +51,7 @@
                             />
                         </div>
                         <div class="flex flex-col w-[330px]">
-                            <Card 
+                            <Card v-show ="user.amount != 0"
                                 :color="'bg-olive-green'"
                                 :width='"lg:w-[300px] w-full"'
                                 :height='"h-[203px]"' 
@@ -150,13 +150,15 @@ import Dashboardtable from '../../components/table/dashboardtable.vue'
                     is_active:null,
                     wallet:null,
                     percentage:null,
-                    amount: 0,
                     drivers: null,
                     referral:null
                 },
                 key1:0,
                 currentProgress: 50,
             }
+        },
+        mounted (){
+            this.autUser()
         },
         methods: {
             goToRoute(){
@@ -178,6 +180,7 @@ import Dashboardtable from '../../components/table/dashboardtable.vue'
                         referral:data.referral
                     }
                     this.key1++
+                    console.log(this.user.amount)
                         
                 }).catch(err => {
                     localStorage.clear()                    

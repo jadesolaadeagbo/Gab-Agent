@@ -1,47 +1,56 @@
 <template>
-    <div class="bg-black w-[372px] h-screen flex border">        
-        <img 
-            class="lg:block hidden absolute w-[100px] left-[53px] top-[40px]"
-            src="/public/assets/gablogowhite.png"  
+    <div class="bg-black h-screen border">        
+        <div class="flex justify-between items-center pt-5 px-5">
+         <img 
+            class="lg:block hidden w-[50px]"
+            src="/public/assets/gablogowhite.png" 
             alt=""
-        >
-        <div class="flex flex-col ml-[57px] lg:mt-[150px] mt-[50px] justify-start items-center gap-6 border lg:w-96 w-60">
+        >     
+        <div class=" ">
+        <button type="button" @click="toggleShow"> 
+            <i class ="fa-solid" style="color: white" :class="{'fa-xmark':showBar,'fa-bars':!showBar}"></i>
+        </button>        
+      </div>      
+        </div>
 
-            <div class="flex flex-row pb-12 ">
+        <div class="flex flex-col px-5 mt-24 gap-6 border whitespace-nowrap">
+
+            <div class="flex flex-row pb-6">
                 <router-link :to="dashboard" :class="active_route === dashboard 
-                    ? 'border-l-4 border-white border border-y-0 border-r-0 flex cursor-pointer flex-row items-center gap-1 p-6 absolute  left-[10px] hover:p-6 text-white ml-4' 
-                    : 'flex cursor-pointer flex-row items-center gap-1 py-8 px-6 absolute left-[10px] text-grey '" @click="updateActiveRoute(dashboard)"
+                    ? 'flex cursor-pointer flex-row items-center gap-1  text-white'
+                    : 'flex cursor-pointer flex-row items-center gap-1  left-[25px] text-grey'" @click="updateActiveRoute(dashboard)"
                 >
+
                 <i class="fa-brands fa-windows fa-2xl"></i>
                 <p class="ml-2 ">{{ $t('dashboard') }}</p>
             </router-link>
             </div>
 
-            <div class="border flex flex-row pb-12">
+            <div class="border flex flex-row pb-6">
                 <router-link :to="drivers" 
                     :class="active_route === drivers 
-                        ? 'border-l-4 border-white border border-y-0 border-r-0 flex cursor-pointer flex-row items-center gap-1 p-6 absolute h-[37.25px] left-[10px]  hover:p-6 text-white ml-4 my-4' 
-                        :'flex cursor-pointer flex-row items-center gap-1 py-8 px-6 absolute h-[37.25px] left-[10px] hover:bg-black text-grey'" @click="updateActiveRoute(drivers)">
+                        ? 'flex cursor-pointer flex-row items-center gap-1  left-[25px] text-white' 
+                        :'flex cursor-pointer flex-row items-center gap-1 left-[25px] hover:bg-black text-grey'" @click="updateActiveRoute(drivers)">
                     <i class="fa-solid fa-user fa-2xl"></i>
                     <p class="ml-2 "> {{$t('registered_drivers')}} </p>
                 </router-link>    
             </div>
 
-            <div class="border flex flex-row pb-12">
+            <div class="border flex flex-row pb-6">
                 <router-link :to="profile" 
                     :class="active_route === profile 
-                        ? 'border-l-4 border-white border border-y-0 border-r-0 flex cursor-pointer flex-row items-center gap-1 p-6 absolute w-[235px] h-[37.25px] left-[10px] hover:p-6 text-white ml-4'
-                        : 'flex cursor-pointer flex-row text-grey items-center gap-1 py-8 px-6 absolute w-[235px] h-[37.25px] left-[10px]'" @click="updateActiveRoute(profile)">
-                    <i class="fa-solid fa-user fa-2xl"></i>
+                        ? 'flex cursor-pointer flex-row items-center gap-1  left-[25px] text-white '
+                        : 'flex cursor-pointer flex-row text-grey items-center gap-1 left-[25px]'" @click="updateActiveRoute(profile)">
+                    <i class="fa-solid fa-user fa-2xl" ></i>
                     <p class="ml-2" >{{ $t('profile') }} </p>
                 </router-link>
             </div>
 
-            <div class="border flex flex-row pb-32">
+            <div class="border flex flex-row ">
                 <a 
                     href="#"
                     @click="logoutUser" 
-                    class='flex cursor-pointer flex-row items-center gap-1 p-6 absolute w-[235px] h-[37.25px] left-[10px]'>
+                    class='flex cursor-pointer flex-row items-center gap-1 left-[25px]'>
                     <i class="fa-solid fa-arrow-right-from-bracket text-grey fa-2xl"></i>
                         <p class="ml-2 text-grey"> {{ $t('logout') }} </p>
                    
@@ -51,7 +60,7 @@
             
 
         <!-- Language Translation dropdown -->
-       <div class="p-6 lg:bottom-0 lg:pt-20 bottom-32 absolute left-[10px]">
+       <div class="pt-6 pl-5 lg:bottom-0 lg:pt-20 bottom-32 absolute left-[10px]">
             <div>
                 <button class="flex items-center text-white gap-2 border border-grey p-2 rounded-sm" @click="toggleDropdown" >
                 <img  :src="getLanguageImage(selectedLanguage)" class="rounded-3xl w-[20px] text-input-grey" alt="">

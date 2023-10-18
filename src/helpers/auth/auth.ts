@@ -9,7 +9,7 @@ export default {
         return Api.post('/logout')
     },
     authUser(){
-        return Api.post('/auth-agent')
+        return Api.get('/auth-agent')
     }
     
 }
