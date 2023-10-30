@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-black h-screen border">        
+    <div class="bg-black h-screen border fixed">        
         <div class="flex justify-between items-center pt-5 px-5">
          <img 
             class="lg:block hidden w-[50px]"
@@ -106,7 +106,9 @@ import frenchImage from "/public/assets/french.svg";
                 isOpen: false,
                 dropdownOpen: false,
                 selectedLanguage: this.$i18n.locale,
+                showBar: false,
             }
+        
         },
         methods: {
             logoutUser(){
@@ -153,12 +155,8 @@ import frenchImage from "/public/assets/french.svg";
             
 
     },
-    
-        
-        created() {
+    created() {
             this.active_route = this.$route.path;
-        },
-        
-        
+    }        
     }
 </script>

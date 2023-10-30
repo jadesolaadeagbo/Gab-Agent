@@ -1,18 +1,20 @@
 <template>
     <div>
         <div :class="[width,height,color,rounded]">
-            <div class="flex flex-col space-y-2 px-5 pt-2">
-                <p class="w-[166px] h-[39px] text-sm font-bold flex items-center text-grey ">
-                    {{ label }}
-                </p>                
-                <span class="">
-                    <img :src="'/assets/'+img" class=" w-[50px]" alt="">                
+            <div class="flex flex-col space-y-2 px-5 pt-10">
+               
+                <span class="">    
+                    <i class="fa-solid" :class="[icon]"></i>           
                 </span>
-
+ 
                 <p 
-                    class="relative font-bold text-md flex flex-row items-center text-center">
-                    {{amount}}
+                    class="py-5 text-2xl">
+                    ₦{{amount}}
                 </p>
+
+                <p class=" text-lg text-white flex items-center font-light ">
+                    {{ label }}
+                </p> 
 
             </div>
 
@@ -29,7 +31,8 @@
             amount: String,
             label: String,
             progress: Number,
-            bgcolor: String
+            bgcolor: String,
+            icon: String
         },
         data() {
             return {
@@ -41,7 +44,9 @@
                 amount: this.$props.amount,
                 label: this.$props.label,
                 progress:this.$props.progress,
-                bgcolor:this.$props.bgcolor 
+                bgcolor:this.$props.bgcolor ,
+                icon:this.$props.icon 
+
             }
         },
     }

@@ -8,6 +8,7 @@ import Auth from '../helpers/auth/auth'
 import Profile from '@/pages/profile/profile.vue'
 import Commission from '../pages/commission/commission.vue'
 import Main from '../layout/main.vue'
+import driverById from '../pages/drivers/driverById.vue'
 
 const loggedIn = localStorage.getItem('token')
 
@@ -93,29 +94,34 @@ let main = {
                         })        
                     }
                 },
-            },
-            {
-               
-                path: path.COMMISSION,
-                name: 'commission',
-                component: Commission,
-                beforeEnter: (to: any, from: any, next: any) => {        
-                    
-                    if (loggedIn) {            
-                        Auth.authUser().then((result: any) => {
-                            if (result) {
-                                next()
-                            } else {
-                                return next(path.LOGIN)
-                            }
-                        }).catch(() => {
-                            return next(path.LOGIN)
-                        })        
-                    }
+        },
+        {
+            
+            path: path.COMMISSION,
+            name: 'commission',
+            component: Commission,
+            beforeEnter: (to: any, from: any, next: any) => {        
                 
+                if (loggedIn) {            
+                    Auth.authUser().then((result: any) => {
+                        if (result) {
+                            next()
+                        } else {
+                            return next(path.LOGIN)
+                        }
+                    }).catch(() => {
+                        return next(path.LOGIN)
+                    })        
                 }
             
             }
+        
+        },
+        {               
+            path:path.DRIVER_BY_ID,
+            name: 'driverById',
+            component: driverById,            
+        }
     ]
 }
 

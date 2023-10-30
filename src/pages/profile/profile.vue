@@ -21,7 +21,7 @@
                     <div class="flex items-center gap-10 relative">
                         <img src="/public/assets/bigavatar.png" class="w-[150px]" alt="">
                         <div>
-                            <!-- <div class="flex flex-row">{{data.fullname}}</div> -->
+                            <div class="flex flex-row">{{user.fullname}}</div>
                             <p class="pt-4 lg:pt-0">{{ $t('gab_agent') }}</p>
                             <!-- <div class="flex flex-row">{{data.country}}</div> -->
                         </div>
@@ -40,10 +40,12 @@
                     <div class="flex sm:flex-row flex-col sm:gap-52 w-full mb-2 pb-6">
                         <div class="flex flex-col">
                             <div class="flex sm:flex-row flex-col text-grey">{{ $t('first_name') }}</div>
-                            <!-- <div class="flex flex-row">{{data.fullname}}</div> -->
+                            <div class="flex flex-row">{{firstname}}</div>
                         </div>
                         <div class="flex flex-col">
                             <div class="flex sm:flex-row flex-col text-grey">{{ $t('last_name') }}</div>
+                            <div class="flex flex-row">{{lastname}}</div>
+
                             <!-- <div class="flex flex-row" v-if="data.referral == null">
                                 Null
                             </div>
@@ -134,24 +136,44 @@ import Auth from '@/helpers/auth/auth.ts'
         data() {
             return {
                 data:null,
-                key1:0
+                key1:0,
+                user: {
+                        id:null,    
+                        fullname:null,
+                        email:null,
+                        phone:null
+                    },
+                    firstname: '',
+                    lastname:''
 
             }
+        },
+        mounted(){
+            this.autUser(),
+            this.splitFullName(this.user.fullname)
+
         },
         methods: {
             autUser(){
                 Auth.authUser().then(res => {
                     let data = res.data.data
-                    this.data =  data
+                    this.user = {
+                        id:data.id,    
+                        fullname:data.fullname,
+                        email:data.email,
+                        phone:data.phone
+                    },
                     this.key1++
                         
                 }).catch(err => {
                     localStorage.clear()                    
                 })
-            }
-        },
-        created() {
-            // console.log(this.autUser())
+            },
+            splitFullName(fullname) {
+                const parts = fullname.split(" ");
+                this.firstName = parts[0] || "";
+                this.lastName = parts.slice(1).join(" ") || "";
+            },
         },
 
     }
