@@ -26,102 +26,55 @@
                 <div class="flex flex-col sm:flex-row gap-3 lg:gap-0 lg:w-full justify-center sm:justify-stretch sm:mx-auto sm:flex-wrap lg:flex-nowrap">
                     <div class="flex flex-col w-[330px]">
                             <Card 
-                                :color="'bg-light-blue'"
                                 :width='"lg:w-[300px] w-full"'
                                 :height='"h-[203px]"'
-                                :img="'wallet.svg'"
                                 :amount="user.wallet"
                                 :label="$t('commission')"
                                 :key="key1"
                                 :progress = 50
-                                :bgcolor="'black'"
+                                :color="'bg-grey'"
+                                :img="'wallet.svg'"
+                                :icon = "'fa-wallet'"
                             />
                         </div>
                         <div class="flex flex-col w-[330px]">
                             <Card 
-                                :color="'bg-cream'"
                                 :width='"lg:w-[300px] w-full"'
                                 :height='"h-[203px]"'
-                                :img="'percentage.svg'"
                                 :amount="user.percentage"
                                 :label="$t('percentage')"
                                 :key="key1"
                                 :progress = 6
-                                :bgcolor="'gray'"
+                                :color="'bg-grey'" 
+                                :img="'percentage.svg'"
+                                :icon="'fa-percent'"
                             />
+
                         </div>
                         <div class="flex flex-col w-[330px]">
-                            <Card 
-                                :color="'bg-olive-green'"
+                            <Card v-show ="user.amount != 0"
                                 :width='"lg:w-[300px] w-full"'
                                 :height='"h-[203px]"' 
-                                :img="'suitcase.svg'"
                                 :amount="user.amount"
                                 :label="$t('salary')"
                                 :key="key1"
+                                :color="'bg-olive-green'"
+                                :img="'suitcase.svg'"
+                                :icon="'fa-suitcase'"
                             />
                         </div>
                 </div>
-                <!-- <div class="flex sm:flex-col lg:space-y-4 flex-col-reverse justify-center">
-                    <div class=" flex flex-col sm:flex-row sm:flex-wrap lg:gap-5 gap-5 sm:w-11/12 sm:m-auto lg:w-auto">
-                        <div class="flex flex-col w-full">
-                            <Card 
-                                :color="'bg-light-blue'"
-                                :width='"lg:w-[300px] sm:w-1/3 w-[90%]"'
-                                :height='"h-[203px]"'
-                                :img="'wallet.svg'"
-                                :amount="user.wallet"
-                                :label="'Commission'"
-                                :key="key1"
-                                :progress = 50
-                                :bgcolor="'black'"
-                            />
-                        </div>
-                        <div class="flex flex-col w-full">
-                            <Card 
-                                :color="'bg-cream'"
-                                :width='"lg:w-[300px] sm:w-1/3 w-[90%]"'
-                                :height='"h-[203px]"'
-                                :img="'percentage.svg'"
-                                :amount="user.percentage"
-                                :label="'Percentage'"
-                                :key="key1"
-                                :progress = 6
-                                :bgcolor="'gray'"
-                            />
-                        </div>
-                        <div class="flex flex-col w-full">
-                            <Card 
-                                :color="'bg-olive-green'"
-                                :width='"lg:w-[300px] sm:w-1/3 w-[90%]"'
-                                :height='"h-[203px]"'
-                                :img="'suitcase.svg'"
-                                :amount="user.amount"
-                                :label="'Salary'"
-                                :key="key1"
-                            />
-                        </div>
-                    </div>
-                    <span class="flex items-center gap-2 py-6 lg:py-0">
-                        <i class="fa-solid fa-circle-info" style="color:grey"></i>
-                        <p class="font-normal text-grey w-1/2 lg:w-1/4 text-[12px]">Commission can be withdrawn when money is above #5000</p>
-                    </span>                    
-                </div> -->
-
-                    <div class="relative mt-8 justify-stretch flex flex-row">                        
+                    <div class="">                        
                         <div class="flex flex-col">
-                            <div class=" pb-2 flex flex-row">
+                            <div class=" pb-2 flex flex-row uppercase pt-20 text-lg sm:text-2xl">
                                 {{ $t('activities') }}
                             </div> 
-                            <div class="lg:gap-4 lg:justify-center sm:mt-0 mt-8 font-bold">
-                                <Dashboardtable :body="user.drivers"
-                                    :key="key1"/>
-                            </div>
+                            <Dashboardtable/>
                         </div>
                     </div>
+                </div>
             </div>            
-        </div>              
-    </div>
+    </div>              
 </template>
 
 <script>
@@ -132,6 +85,7 @@ import Auth from '@/helpers/auth/auth.ts'
 import MobileMenu from '@/layout/mobilemenu/menu.vue'
 import Dashboardtable from '../../components/table/dashboardtable.vue'
 
+
     export default {
         components: {
             MobileMenu,
@@ -139,6 +93,7 @@ import Dashboardtable from '../../components/table/dashboardtable.vue'
             NameCard,
             Sidebar,
             Dashboardtable,
+            
         },
         data() {
             return {
@@ -150,13 +105,17 @@ import Dashboardtable from '../../components/table/dashboardtable.vue'
                     is_active:null,
                     wallet:null,
                     percentage:null,
-                    amount: 0,
                     drivers: null,
-                    referral:null
+                    referral:null,
                 },
-                key1:0,
+                start_date: null,
+                end_date: null,
                 currentProgress: 50,
+                key1:null
             }
+        },
+        mounted (){
+            this.autUser()
         },
         methods: {
             goToRoute(){
@@ -177,7 +136,7 @@ import Dashboardtable from '../../components/table/dashboardtable.vue'
                         amount:data.salary,
                         referral:data.referral
                     }
-                    this.key1++
+                    this.key1 ++;
                         
                 }).catch(err => {
                     localStorage.clear()                    

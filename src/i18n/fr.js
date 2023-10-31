@@ -45,8 +45,8 @@ const messages= {
     // DashboardTable
     driver: 'Conducteur',
     date:'Date',
-    trip_price:'Prix ​​du voyage',
-    percentage_per_price:'Pourcentage par prix',
+    trip_price:"Quota d'gab",
+    percentage_per_price:"Quota d'agents",
 
     // Table
     registration_date:"Date d'inscription",

@@ -1,8 +1,8 @@
 <template>
   <!-- Responsiveness on larger screens -->
-    <div class="lg:flex lg:items-start hidden">
-      <sidebar :active_route="active_route" class="fixed"/>
-      <router-view class="lg:ml-[400px]"></router-view>        
+    <div class="lg:flex lg:items-start gap-60 hidden ">
+      <sidebar :active_route="active_route" class=""/>
+      <router-view class="pl-60"></router-view>        
     </div>
 
       <!-- NavBar -->

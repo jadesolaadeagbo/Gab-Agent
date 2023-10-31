@@ -44,8 +44,8 @@ const messages= {
     // DashboardTable
     driver: 'Motorista',
     date:'Data',
-    trip_price:'Preço da Viagem',
-    percentage_per_price:'Porcentagem por preço',
+    trip_price:'Cota de Gab',
+    percentage_per_price:'Cota de agente',
 
     // Table
     registration_date:'Data de registro',
