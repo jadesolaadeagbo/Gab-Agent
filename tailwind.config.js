@@ -33,7 +33,9 @@ module.exports = {
       'olive-green' :"#CEFFD6",
       'red':"#FF0000",
       'input-grey':"#F6F6F6",
-      'border-grey':"#F0F0F0"
+      'border-grey':"#F0F0F0",
+      'green' :"#00FF7F",
+      'blue': "#00BFFF"
       
 
     },
