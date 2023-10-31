@@ -1,7 +1,7 @@
 <template>
     <div>
         <div :class="[width,height,color,rounded]">
-            <div class="flex flex-col space-y-2 px-5 pt-10">
+            <div class="flex flex-col space-y-2 px-5 pt-10 text-white">
                
                 <span class="">    
                     <i class="fa-solid" :class="[icon]"></i>           

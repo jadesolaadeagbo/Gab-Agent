@@ -12,21 +12,21 @@
 
           <div class="flex flex-col gap-4">
             <div class="flex flex-col">
-            <p class="flex sm:flex-row flex-col text-grey">Name</p>
-            <p class="flex flex-row">{{driver.fullname}}</p>
+            <p class="flex sm:flex-row flex-col ">Name</p>
+            <p class="flex flex-row text-grey">{{driver.fullname}}</p>
           </div>
           <div class="flex flex-col">
-            <p class="flex sm:flex-row flex-col text-grey">Gender</p>
-            <p class="flex flex-row capitalize">{{ driver.gender}}</p>
+            <p class="flex sm:flex-row flex-col">Gender</p>
+            <p class="flex flex-row capitalize text-grey">{{ driver.gender}}</p>
           </div>
           <div class="flex flex-col">
-            <p class="flex sm:flex-row flex-col text-grey">Date of Birth</p>
-            <p class="flex flex-row">{{ driver.dob }}</p>
+            <p class="flex sm:flex-row flex-col ">Date of Birth</p>
+            <p class="flex flex-row text-grey">{{ driver.dob }}</p>
           </div>
           <div class="flex flex-col">
-            <p class="flex sm:flex-row flex-col text-grey">Active Status</p>
-            <p v-if="driver.is_active == 0" class="flex flex-row">Active</p>
-            <p v-if="driver.is_active == 1" class="flex flex-row">In-Active</p>
+            <p class="flex sm:flex-row flex-col">Active Status</p>
+            <p v-if="driver.is_active == 0" class="flex flex-row text-grey">Active</p>
+            <p v-if="driver.is_active == 1" class="flex flex-row text-grey">In-Active</p>
           </div>
           </div>
 
@@ -36,24 +36,24 @@
           <h1 class="text-2xl py-4"><b>Vehicle driver</b></h1>
           <div class="flex flex-col gap-4">
             <div class="flex flex-col">
-            <p class="flex sm:flex-row flex-col text-grey">Vehicle Manufacturer</p>
-            <p class="flex flex-row">{{ driver.vehicle.vehicle_manufacturer.name }}</p>
+            <p class="flex sm:flex-row flex-col ">Vehicle Manufacturer</p>
+            <p class="flex flex-row text-grey">{{ driver.vehicle.vehicle_manufacturer.name }}</p>
           </div>
           <div class="flex flex-col">
-            <p class="flex sm:flex-row flex-col text-grey">Vehicle Model</p>
-            <p class="flex flex-row">{{ driver.vehicle.vehicle_model.name }}</p>
+            <p class="flex sm:flex-row flex-col ">Vehicle Model</p>
+            <p class="flex flex-row text-grey">{{ driver.vehicle.vehicle_model.name }}</p>
           </div>
           <div class="flex flex-col">
-            <p class="flex sm:flex-row flex-col text-grey">Vehicle Color</p>
-            <p class="flex flex-row capitalize">{{ driver.vehicle.color }}</p>
+            <p class="flex sm:flex-row flex-col ">Vehicle Color</p>
+            <p class="flex flex-row capitalize text-grey">{{ driver.vehicle.color }}</p>
           </div>
           <div class="flex flex-col">
-            <p class="flex sm:flex-row flex-col text-grey">License Plate Number</p>
-            <p class="flex flex-row capitalize">{{ driver.vehicle.plate_number }}</p>
+            <p class="flex sm:flex-row flex-col ">License Plate Number</p>
+            <p class="flex flex-row capitalize text-grey">{{ driver.vehicle.plate_number }}</p>
           </div>
           <div class="flex flex-col">
-            <p class="flex sm:flex-row flex-col text-grey">Driver License Number</p>
-            <p class="flex flex-row">{{ driver.driver_license_number }}</p>
+            <p class="flex sm:flex-row flex-col ">Driver License Number</p>
+            <p class="flex flex-row text-grey">{{ driver.driver_license_number }}</p>
           </div>
           </div>
 
@@ -64,20 +64,20 @@
 
           <div class="flex flex-col gap-4">
             <div class="flex flex-col">
-            <p class="flex sm:flex-row flex-col text-grey">Guarantor Name</p>
-            <p class="flex flex-row">{{ driver.guarantor.name }}</p>
+            <p class="flex sm:flex-row flex-col">Guarantor Name</p>
+            <p class="flex flex-row text-grey">{{ driver.guarantor.name }}</p>
           </div>
           <div class="flex flex-col">
-            <p class="flex sm:flex-row flex-col text-grey">Address</p>
-            <p class="flex flex-row">{{driver.guarantor.address}}</p>
+            <p class="flex sm:flex-row flex-col">Address</p>
+            <p class="flex flex-row text-grey">{{driver.guarantor.address}}</p>
           </div>
           <div class="flex flex-col">
-            <p class="flex sm:flex-row flex-col text-grey">Guarantor Phone Number</p>
-            <p class="flex flex-row">{{ driver.guarantor.phone }}</p>
+            <p class="flex sm:flex-row flex-col">Guarantor Phone Number</p>
+            <p class="flex flex-row text-grey">{{ driver.guarantor.phone }}</p>
           </div>
           <div class="flex flex-col">
-            <p class="flex sm:flex-row flex-col text-grey">Relationship</p>
-            <p class="flex flex-row capitalize">{{ driver.guarantor.relationship }}</p>
+            <p class="flex sm:flex-row flex-col ">Relationship</p>
+            <p class="flex flex-row capitalize text-grey">{{ driver.guarantor.relationship }}</p>
           </div>
           </div>
 
@@ -87,9 +87,9 @@
 
               <span>
                 <p class="flex sm:flex-row flex-col text-grey">Rating</p>
-                <p v-if="driver.average_rating > 3" class="flex flex-row"><span class=" badge badge-success">{{driver.average_rating}}</span></p>
-                <p v-if="driver.average_rating == 0" class="flex flex-row"><span class=" badge badge-info">{{driver.average_rating}}</span></p>
-                <p v-if="driver.average_rating < 0" class="flex flex-row"><span class=" badge badge-danger">{{driver.average_rating}}</span></p>
+                <p v-if="driver.average_rating > 3" class="flex flex-row text-grey"><span class=" badge badge-success">{{driver.average_rating}}</span></p>
+                <p v-if="driver.average_rating == 0" class="flex flex-row"><span class=" badge badge-info text-grey">{{driver.average_rating}}</span></p>
+                <p v-if="driver.average_rating < 0" class="flex flex-row"><span class=" badge badge-danger text-grey">{{driver.average_rating}}</span></p>
               </span>
               
 

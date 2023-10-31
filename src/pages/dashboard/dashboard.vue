@@ -17,7 +17,7 @@
                         <p class=" text-lg sm:text-2xl">{{$t('dashboard')}}</p>                    
                     </div>
                     <div class="hover:bg-grey bg-black text-sm rounded-xl border-grey-silver">
-                        <button @click="goToRoute()" class="btn btn-info col-6 text-white bg-black py-2 px-6 text-[12px] rounded-lg" >
+                        <button @click="goToRoute()" class="btn btn-info col-6 text-white bg-black py-2 px-6 text-[18px] rounded-lg" >
                             {{ $t('withdraw_commission') }}
                         </button>
                     </div>
@@ -52,7 +52,9 @@
 
                         </div>
                         <div class="flex flex-col w-[330px]">
-                            <Card v-show ="user.amount != 0"
+                            
+                            <!-- <Card v-if ="user.amount != 0"
+                                :class="{}"
                                 :width='"lg:w-[300px] w-full"'
                                 :height='"h-[203px]"' 
                                 :amount="user.amount"
@@ -61,7 +63,7 @@
                                 :color="'bg-olive-green'"
                                 :img="'suitcase.svg'"
                                 :icon="'fa-suitcase'"
-                            />
+                            /> -->
                         </div>
                 </div>
                     <div class="">                        
