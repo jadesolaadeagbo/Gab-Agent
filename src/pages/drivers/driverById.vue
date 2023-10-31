@@ -21,7 +21,7 @@
           </div>
           <div class="flex flex-col">
             <p class="flex sm:flex-row flex-col ">Date of Birth</p>
-            <p class="flex flex-row text-grey">{{ driver.dob }}</p>
+            <p class="flex flex-row text-grey">{{ formatDate(driver.dob) }}</p>
           </div>
           <div class="flex flex-col">
             <p class="flex sm:flex-row flex-col">Active Status</p>
@@ -192,7 +192,12 @@ import Auth from '@/helpers/auth/auth.ts'
                       localStorage.clear();                    
                 })
         },
+      formatDate(dateString) {
+        const date = new Date(dateString);
+        const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+        return date.toLocaleDateString('en-US', options);
       },
+        },
 
       mounted(){
         const id = this.$route.params.id;
