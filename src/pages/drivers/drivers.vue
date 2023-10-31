@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="pl-60">
         <!-- Search Bar -->
         <div class="py-10 border-b border-input-grey lg:flex justify-end items-center w-full gap-8 pr-16 hidden">
             <div class="w-full flex justify-end">
