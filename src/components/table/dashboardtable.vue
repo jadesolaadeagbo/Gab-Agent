@@ -15,40 +15,30 @@
             <button class="btn btn-info col-6 text-white bg-black py-3 px-6  mr-10 rounded-lg" type="submit">Generate</button>
         </form>
 
-        <table class="lg:gap-4 lg:justify-center sm:mt-0 mt-8 font-bold">
-            <thead class="border border-b-grey border-t-0 border-r-0 border-l-0">
-                <tr class=""> 
-                    <th class=" text-sm font-semibold text-grey text-left px-16 py-4">#</th>   
-                    <th class=" text-sm font-semibold text-grey px-16 py-4">
-                        {{ $t('driver') }}
-                    </th>                
-                    <th class=" text-sm font-semibold text-grey px-16 py-4">
-                        {{ $t('date') }}
-                    </th>
-                    <th class=" text-sm font-semibold text-grey px-16 py-4">
-                        {{ $t('trip_price') }}
-                    </th>           
-                    <th class=" text-sm font-semibold text-grey px-16 py-4">
-                        {{ $t('percentage_per_price') }}
-                    </th>                                                        
-                </tr>
-            </thead>
- 
-            <tbody class="" v-for="activity in activities.data" :key="activity.id">
-                <tr>
-                    <td class=" text-sm font-medium text-gray-800 dark:text-gray-200 text-center py-4">{{ activity.driver_id }}</td>
-                    <td class=" text-sm text-gray-800 dark:text-gray-200 text-center py-4">{{ activity.fullname }}</td>
-                    <td class="text-sm text-gray-800 dark:text-gray-200 text-center py-4">{{ activity.date }}</td>
-                    <td class=" text-sm font-medium text-center py-4">
-                        {{ activity.gab_quota }}
-                    </td>     
-                    <td class=" text-sm font-medium text-center py-4">
-                        {{activity.agent_quota}}
-                    </td>
-                </tr>   
-
+        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700 mt-16">
+                    <thead>
+                        <tr>
+                        <th scope="col" class=" py-3 text-xs text-center font-medium text-gray-500 uppercase">#</th>
+                        <th scope="col" class="py-3  text-xs font-medium text-gray-500 uppercase text-center">{{ $t('driver') }}</th>
+                        <th scope="col" class="py-3  text-xs font-medium text-gray-500 uppercase text-center">{{ $t('date') }}</th>
+                        <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase">{{ $t('trip_price') }}</th>
+                        <th scope="col" class="py-3  text-xs font-medium text-gray-500 uppercase">{{ $t('percentage_per_price') }}</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 dark:divide-gray-700" v-for="activity in activities.data" :key="activity.index">
+                        <tr>
+                        <td class="text-center py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">{{ activity.driver_id}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 text-center">{{ activity.fullname }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 text-center">{{ activity.date }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center">
+                            {{ activity.gab_quota }}
+                        </td>                        
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center">
+                            {{ activity.agent_quota }}
+                        </td> 
+                        </tr>
                     </tbody>
-        </table>        
+        </table>   
     </div>
 </template>
 <script>
@@ -77,17 +67,6 @@ import Auth from '@/helpers/auth/auth.ts'
                 .then((res) => {
                     let data = res.data.data;
                     this.activities = data;
-                    this.activitiesData = this.activities.data;
-
-                    const filteredData = this.activitiesData.filter((activity) => {
-                        const activityDate = new Date(activity.date);
-                        const startDate = new Date(this.form.start_date);
-                        const endDate = new Date(this.form.end_date);
-
-                        return activityDate >= startDate && activityDate <= endDate;
-                    });
-
-                    this.filteredData = filteredData;
                     console.log("clicked");
     })
                 .catch((err) => {
