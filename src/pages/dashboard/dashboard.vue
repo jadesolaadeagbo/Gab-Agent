@@ -12,18 +12,18 @@
                 <img src="/public/assets/avatar.png" class="w-[50px]" alt="">
 
             </div>
-                <div class="flex justify-between items-center mt-5 font-bold sm:w-[96%] w-[92%] lg:pl-0">                    
+                <div class="flex justify-between items-center mt-5 sm:w-[96%] w-[92%] lg:pl-0">                    
                     <div>
                         <p class=" text-lg sm:text-2xl">{{$t('dashboard')}}</p>                    
                     </div>
                     <div class="hover:bg-grey bg-black text-sm rounded-xl border-grey-silver">
-                        <button @click="goToRoute()" class="text-white px-8 py-2 text-[10px] sm:text-lg">
+                        <button @click="goToRoute()" class="btn btn-info col-6 text-white bg-black py-2 px-6 text-[12px] rounded-lg" >
                             {{ $t('withdraw_commission') }}
                         </button>
                     </div>
                 </div>                             
-            <div class=" mt-10 gap-6 font-bold">
-                <div class="flex flex-col sm:flex-row gap-3 lg:gap-0 lg:w-full justify-center sm:justify-stretch sm:mx-auto sm:flex-wrap lg:flex-nowrap">
+            <div class=" mt-10 gap-6">
+                <div class="flex flex-col sm:flex-row gap-3 lg:gap-0 lg:w-full justify-center sm:justify-stretch sm:mx-auto sm:flex-wrap lg:flex-nowrap font-bold">
                     <div class="flex flex-col w-[330px]">
                             <Card 
                                 :width='"lg:w-[300px] w-full"'
@@ -32,7 +32,7 @@
                                 :label="$t('commission')"
                                 :key="key1"
                                 :progress = 50
-                                :color="'bg-grey'"
+                                :color="'bg-green'"
                                 :img="'wallet.svg'"
                                 :icon = "'fa-wallet'"
                             />
@@ -45,7 +45,7 @@
                                 :label="$t('percentage')"
                                 :key="key1"
                                 :progress = 6
-                                :color="'bg-grey'" 
+                                :color="'bg-blue'" 
                                 :img="'percentage.svg'"
                                 :icon="'fa-percent'"
                             />
@@ -66,7 +66,7 @@
                 </div>
                     <div class="">                        
                         <div class="flex flex-col">
-                            <div class=" pb-2 flex flex-row uppercase pt-20 text-lg sm:text-2xl">
+                            <div class=" pb-2 flex flex-row pt-10 text-lg sm:text-2xl">
                                 {{ $t('activities') }}
                             </div> 
                             <Dashboardtable/>

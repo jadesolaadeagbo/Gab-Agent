@@ -46,8 +46,8 @@ const messages= {
     // DashboardTable
     driver: 'Driver',
     date:'Date',
-    trip_price:'Gab Quota',
-    percentage_per_price:'Agent Quota',
+    trip_price:'Gab Quota(₦)',
+    percentage_per_price:'Agent Quota(₦)',
 
     // Table
     registration_date:'Registration Date',

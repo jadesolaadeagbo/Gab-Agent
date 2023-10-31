@@ -10,7 +10,7 @@
             </span>
             <img src="/public/assets/avatar.png" class="w-[50px]" alt="">
         </div>
-        <h1 class="text-2xl py-5">Drivers</h1>
+        <h1 class=" flex flex-row py-10 text-lg sm:text-2xl">Drivers</h1>
         <div v-if="loading===true">
             <span class="flex justify-center items-center w-full pt-20 pl-80">
                 <span class="loader"></span>
@@ -35,21 +35,21 @@
                     </thead>
                     <tbody class="divide-y divide-gray-200 dark:divide-gray-700" v-for="driver in drivers" :key="driver.id">
                         <tr>
-                        <td class="text-center py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">{{ driver.driver_id }}</td>
+                        <td class="text-center py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{{ driver.driver_id }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 text-center">{{ driver.driver.fullname }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{{ driver.driver.phone }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-center">
                             <span class="text-blue-500 hover:text-blue-700">{{ driver.driver.email }}</span>
                         </td>                        
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-center">
                             <span class="text-blue-500 hover:text-blue-700" v-if="driver.driver.is_banned===0">Not banned</span>
                             <span class="text-blue-500 hover:text-blue-700" v-else>Banned</span>
                         </td>                        
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center ">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-center ">
                             <span class="text-blue-500 hover:text-blue-700 capitalize text-center">{{ driver.driver.gender }}</span>
                         </td>
 
-                        <td class="px-16 py-4 whitespace-nowrap text-sm font-medium">
+                        <td class="px-16 py-4 whitespace-nowrap text-sm">
                             <span class="text-blue-500 text-center hover:text-blue-700" v-if="driver.driver.is_active===0">Not Active</span>
                             <span class="text-blue-500 text-center hover:text-blue-700" v-else>Active</span>
                         </td>
