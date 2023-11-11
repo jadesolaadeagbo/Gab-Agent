@@ -1,6 +1,6 @@
 <template>
     <div class="mb-10" >
-        <!-- <form class="flex justify-between items-center py-10 " @submit.prevent="AgentActivities()">
+        <form class="flex justify-between items-center py-10 " @submit.prevent="AgentActivities()">
             <div class="flex gap-7">
                 <div class="flex gap-4">
                 <label>From</label>
@@ -13,7 +13,7 @@
             </div>
 
             <button class="btn btn-info col-6 text-white bg-black py-3 px-6  mr-10 rounded-lg" type="submit">Generate</button>
-        </form> -->
+        </form>
         <div v-if="loading===true">
             <span class="flex justify-center items-center w-full pt-20 ">
                 <span class="loader"></span>

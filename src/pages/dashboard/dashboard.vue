@@ -24,24 +24,25 @@
                 </div>                             
             <div class=" mt-10 gap-6">
                 <div class="flex flex-col sm:flex-row gap-3 lg:gap-0 lg:w-full justify-center sm:justify-stretch sm:mx-auto sm:flex-wrap lg:flex-nowrap font-bold">
-                    <div class="flex flex-col w-[330px]">
+                    <div class="flex flex-col w-[330px]" title="Agent's commission">
                             <Card 
                                 :width='"lg:w-[300px] w-full"'
                                 :height='"h-[203px]"'
-                                :amount="user.wallet"
+                                :amount="formatCommission(pay.commission)"
                                 :label="$t('commission')"
                                 :key="key1"
                                 :progress = 50
                                 :color="'bg-green'"
                                 :img="'wallet.svg'"
                                 :icon = "'fa-wallet'"
+                                
                             />
                         </div>
-                        <div class="flex flex-col w-[330px]">
+                        <div class="flex flex-col w-[330px]" title="Percentage accrued to agent">
                             <Card 
                                 :width='"lg:w-[300px] w-full"'
                                 :height='"h-[203px]"'
-                                :amount="user.percentage"
+                                :amount="pay.percentage"
                                 :label="$t('percentage')"
                                 :key="key1"
                                 :progress = 6
@@ -51,19 +52,17 @@
                             />
 
                         </div>
-                        <div class="flex flex-col w-[330px]">
-                            
-                            <!-- <Card v-if ="user.amount != 0"
-                                :class="{}"
+                        <div class="flex flex-col w-[330px]" title="Agent's salary">                         
+                            <Card :class="{'hidden': !showClass}"
                                 :width='"lg:w-[300px] w-full"'
                                 :height='"h-[203px]"' 
-                                :amount="user.amount"
+                                :amount="pay.salary"
                                 :label="$t('salary')"
                                 :key="key1"
-                                :color="'bg-olive-green'"
+                                :color="'bg-red'"
                                 :img="'suitcase.svg'"
                                 :icon="'fa-suitcase'"
-                            /> -->
+                            />
                         </div>
                 </div>
                     <div class="">                        
@@ -99,25 +98,19 @@ import Dashboardtable from '../../components/table/dashboardtable.vue'
         },
         data() {
             return {
-                user:{
-                    id:null,    
-                    fullname:null,
-                    email:null,
-                    phone:null,
-                    is_active:null,
-                    wallet:null,
-                    percentage:null,
-                    drivers: null,
-                    referral:null,
-                },
-                start_date: null,
-                end_date: null,
-                currentProgress: 50,
-                key1:null
+                key1:null,
+                loading: false,
+                pay:{
+                  commission:'',
+                  percentage:'',
+                  salary:''
+                }
             }
         },
-        mounted (){
-            this.autUser()
+        computed: {
+          showClass() {
+           return this.pay.salary !== 0;
+          },
         },
         methods: {
             goToRoute(){
@@ -143,10 +136,34 @@ import Dashboardtable from '../../components/table/dashboardtable.vue'
                 }).catch(err => {
                     localStorage.clear()                    
                 })
-            }
+            },
+            commission(){
+                this.loading = true;
+                Auth.commission().then(res => {
+                    let data = res.data.data;
+                    this.pay = data;
+                    console.log(this.pay);
+                    this.loading = false;
+                        
+                }).catch(err => {
+                    this.loading = false;
+                    console.error('Error fetching activities:', err);
+                    localStorage.clear();                   
+                })
+            },
+            formatCommission(value) {
+                const commission = parseFloat(value);
+
+                if (!isNaN(commission)) {
+                    return commission.toFixed(1);
+                } else {
+                    return ''; 
+                }
+            },
         },
-        created() {
-            this.autUser()
+        mounted (){
+            this.autUser(),
+            this.commission()
         },
 
     }
