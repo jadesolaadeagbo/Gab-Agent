@@ -9,7 +9,7 @@
  
                 <p 
                     class="py-5 text-2xl">
-                    ₦{{amount}}
+                    {{amount}}
                 </p>
 
                 <p class=" text-lg text-white flex items-center font-light ">

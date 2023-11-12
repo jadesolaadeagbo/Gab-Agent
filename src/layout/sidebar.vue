@@ -119,7 +119,6 @@ import frenchImage from "/public/assets/french.svg";
             },
             updateActiveRoute(route){
                 this.active_route = route;
-                console.log(this.active_route);
             },
             toggleDropdown(){
             this.dropdownOpen = !this.dropdownOpen

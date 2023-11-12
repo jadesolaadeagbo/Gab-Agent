@@ -19,7 +19,10 @@ export default  {
     },
     activities(form:object){
         return Api.post('/agent/drivers-activities', form )
-    }
+    },
+    commission() {
+        return Api.post('/agent/commission')
+    },
 }
 
 
